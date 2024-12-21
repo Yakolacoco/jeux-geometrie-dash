@@ -8,18 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let isJumping = false;
     let score = 0;
 
-    // Initialiser l'affichage du score à 0
     scoreDisplay.textContent = `Score : ${score}`;
 
-    const jumpHeight = 250; // Hauteur maximale du saut
-    const gravitySpeed = 2; // Vitesse de chute
-    const jumpSpeed = 10; // Vitesse de montée
+    const jumpHeight = 250;
+    const gravitySpeed = 2;
+    const jumpSpeed = 10;
 
     const blocBlancInitialTop = parseInt(getComputedStyle(blocBlanc).top);
+    const blockSpeed = 5;
 
-    const blockSpeed = 5; // Vitesse de déplacement des blocs roses
-
-    // Fonction pour faire sauter le bloc blanc
     const jump = () => {
         if (isJumping || !gameRunning) return;
         isJumping = true;
@@ -37,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 20);
     };
 
-    // Fonction pour appliquer la gravité
     const gravity = () => {
         let currentTop = parseInt(getComputedStyle(blocBlanc).top);
         const groundLevel = blocBlancInitialTop;
@@ -57,25 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 20);
     };
 
-    // Fonction pour déplacer les blocs roses
     const moveBlocks = () => {
         blocsDegat.forEach((bloc) => {
             let currentLeft = parseInt(getComputedStyle(bloc).left);
 
-            // Si le bloc sort de l'écran, on le replace et on augmente le score
             if (currentLeft <= -75) {
                 currentLeft = window.innerWidth;
                 score++;
                 scoreDisplay.textContent = `Score : ${score}`;
             }
 
-            bloc.style.left = `${currentLeft - blockSpeed}px`; // Déplacement vers la gauche
+            bloc.style.left = `${currentLeft - blockSpeed}px`;
         });
 
         checkCollision();
     };
 
-    // Fonction pour vérifier les collisions
     const checkCollision = () => {
         const blocBlancRect = blocBlanc.getBoundingClientRect();
 
@@ -93,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Fonction pour arrêter le jeu
     const gameOver = () => {
         gameRunning = false;
         const gameOverMessage = document.createElement("div");
@@ -107,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         body.appendChild(gameOverMessage);
     };
 
-    // Écouteur pour détecter la touche flèche haut
     document.addEventListener("keydown", (e) => {
         if (e.key === "ArrowUp") {
             jump();
@@ -117,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Boucle principale pour déplacer les blocs roses
     setInterval(() => {
         if (gameRunning) {
             moveBlocks();
