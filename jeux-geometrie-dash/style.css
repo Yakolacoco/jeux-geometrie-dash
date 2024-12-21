@@ -1,0 +1,92 @@
+        body {
+           background-color: black;
+            background-size: cover; 
+            background-position: center; 
+            position: absolute; 
+            margin: 0; 
+        }
+
+        .score {
+            padding: 110px 0px 50px 2250px;
+            color: white;
+            font-size: 40px; 
+        }
+
+        .ligne {
+            position: absolute;
+            top: 470%;
+            width: 2553px;
+            border: 2px solid rgb(255, 255, 255);
+        }
+
+        .r {
+            position: absolute;
+            color: white;
+            top: 500%;
+            left: 3%;
+            font-size: 45px;
+        }
+
+        .re {
+            position: absolute;
+            color: white;
+            top: 560%;
+            left: 3%;
+            font-size: 45px;
+        }
+
+        .bloc-blanc {
+            position: absolute;
+            width: 75px; 
+            height: 75px; 
+            background-color: white; 
+            left: 10%;
+            top: 435%;
+        }
+
+        .block1 {
+            position: absolute;
+            width: 75px; 
+            height: 75px; 
+            background-color: rgb(221, 0, 255); 
+            left: 40%;
+            top: 433%;
+        }
+
+        
+        .block2 {
+            position: absolute;
+            width: 75px; 
+            height: 75px; 
+            background-color: rgb(221, 0, 255); 
+            left: 58%;
+            top: 380%;
+        }
+
+        
+        .block3 {
+            position: absolute;
+            width: 75px; 
+            height: 75px; 
+            background-color: rgb(221, 0, 255); 
+            left: 58%;
+            top: 350%;
+        }
+
+        .block4 {
+            position: absolute;
+            width: 75px; 
+            height: 75px; 
+            background-color: rgb(221, 0, 255); 
+            left: 70%;
+            top: 380%;
+        }
+
+        .block5 {
+            position: absolute;
+            width: 75px; 
+            height: 75px; 
+            background-color: rgb(221, 0, 255); 
+            left: 80%;
+            top: 433%;
+        }
